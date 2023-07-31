@@ -14,6 +14,7 @@ specifiers:
   tailwindcss: ^3.3.3
   vue-maplibre-gl: ^2.1.0
   vuetify: ^3.3.10
+  zod: ^3.21.4
 
 dependencies:
   '@mdi/font': 7.2.96
@@ -23,6 +24,7 @@ dependencies:
   sass: 1.64.1
   vue-maplibre-gl: 2.1.0_aozjpd3fgozundtchl6z66ne34
   vuetify: 3.3.10
+  zod: 3.21.4
 
 devDependencies:
   '@nuxt/devtools': 0.7.1_nuxt@3.6.5
@@ -7182,3 +7184,7 @@ packages:
       compress-commons: 4.1.1
       readable-stream: 3.6.2
     dev: true
+
+  /zod/3.21.4:
+    resolution: {integrity: sha512-m46AKbrzKVzOzs/DZgVnG5H55N1sv1M8qZU3A8RIKbs3mrACDNeIOeilDymVb2HdmP8uwshOCF4uJ8uM9rCqJw==}
+    dev: false
