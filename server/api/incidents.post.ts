@@ -1,5 +1,5 @@
 import { supabase } from "~/server/lib/supabaseClient";
-import { CreateIncidentPayload } from "~/server/types";
+import { CreateIncidentPayload } from "~/share/types";
 
 export default defineEventHandler(async (event) => {
   const body = await readBody(event);
