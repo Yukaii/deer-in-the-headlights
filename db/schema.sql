@@ -7,6 +7,22 @@ CREATE TABLE IF NOT EXISTS public.locations (
   location GEOGRAPHY(POINT) NOT NULL
 );
 
+CREATE OR REPLACE FUNCTION public.get_location_info_by_id(location_id INTEGER)
+RETURNS TABLE(id INTEGER, location_text TEXT, x FLOAT, y FLOAT) AS $$
+BEGIN
+  RETURN QUERY
+  SELECT
+    l.id AS id,
+    ST_AsText(l.location) AS location_text,
+    ST_X(l.location::geometry) AS x,
+    ST_Y(l.location::geometry) AS y
+  FROM
+    public.locations l
+  WHERE
+    l.id = location_id;
+END;
+$$ LANGUAGE plpgsql;
+
 CREATE OR REPLACE FUNCTION public.upsert_location_info(lat FLOAT, lng FLOAT)
 RETURNS TABLE(id INTEGER, location_text TEXT, x FLOAT, y FLOAT) AS $$
 DECLARE

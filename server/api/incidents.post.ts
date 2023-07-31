@@ -28,11 +28,9 @@ export default defineEventHandler(async (event) => {
   // upsert location
   let location;
   if (location_id) {
-    const { error: locationError, data: locationData } = await supabase
-      .from("locations")
-      .select()
-      .eq("id", location_id)
-      .select("ST_X(location) as longitude, ST_Y(location) as latitude, *");
+    const { error: locationError, data: locationData } = await supabase.rpc('get_location_info_by_id', {
+      location_id,
+    }).select();
 
     if (locationError) {
       return { status: 500, body: locationError.message };
@@ -100,11 +98,10 @@ export default defineEventHandler(async (event) => {
     photosData = insertedPhotos;
   }
 
-  console.log(location);
-
   const returnData = {
     ...incident,
     location: {
+      id: location.id,
       longitude: location.x,
       latitude: location.y,
     },
