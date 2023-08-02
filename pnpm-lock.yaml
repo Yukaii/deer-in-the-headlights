@@ -14,7 +14,6 @@ specifiers:
   postcss: ^8.4.27
   sass: ^1.64.1
   tailwindcss: ^3.3.3
-  vue-maplibre-gl: ^2.1.0
   vuetify: ^3.3.10
   zod: ^3.21.4
 
@@ -24,7 +23,6 @@ dependencies:
   maplibre-gl: 3.2.1
   mitt: 3.0.1
   sass: 1.64.1
-  vue-maplibre-gl: 2.1.0_aozjpd3fgozundtchl6z66ne34
   vuetify: 3.3.10
   zod: 3.21.4
 
@@ -6992,18 +6990,6 @@ packages:
   /vue-devtools-stub/0.1.0:
     resolution: {integrity: sha512-RutnB7X8c5hjq39NceArgXg28WZtZpGc3+J16ljMiYnFhKvd8hITxSWQSQ5bvldxMDU6gG5mkxl1MTQLXckVSQ==}
     dev: true
-
-  /vue-maplibre-gl/2.1.0_aozjpd3fgozundtchl6z66ne34:
-    resolution: {integrity: sha512-ntRRyt5n61wxMel2MQQN4OK+yIvN/asvITBNtaB+vbh4SohOBdz9DqC4zENxHmvMg0wk+3hqfDCascf+wkiGWA==}
-    engines: {node: '>=16'}
-    peerDependencies:
-      maplibre-gl: ^2.4.0
-      mitt: ^3.0.0
-      vue: ^3.3.2
-    dependencies:
-      maplibre-gl: 3.2.1
-      mitt: 3.0.1
-    dev: false
 
   /vue-router/4.2.4_vue@3.3.4:
     resolution: {integrity: sha512-9PISkmaCO02OzPVOMq2w82ilty6+xJmQrarYZDkjZBfl4RvYAlt4PKnEX21oW4KTtWfa9OuO/b3qk1Od3AEdCQ==}
