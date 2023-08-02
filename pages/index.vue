@@ -9,6 +9,8 @@
 </template>
 
 <script lang="ts">
+import 'maplibre-gl/dist/maplibre-gl.css';
+
 import toggleTheme from "~/hooks/toggleTheme";
 import { useMouse } from "@vueuse/core";
 import { Map } from "maplibre-gl";
@@ -22,8 +24,8 @@ export default {
       const map = new Map({
         container: mapRef.value!,
         style: "https://basemaps.cartocdn.com/gl/positron-gl-style/style.json",
-        center: [0, 0],
-        zoom: 2,
+        center: [121.51545267311785, 25.039814170038984],
+        zoom: 15,
       });
     });
 
