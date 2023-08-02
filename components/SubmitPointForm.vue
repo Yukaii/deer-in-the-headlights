@@ -17,9 +17,10 @@
 
           <v-text-field label="Description" outlined required />
 
-          <v-text-field v-model="lng" label="Longitude" outlined required />
-
-          <v-text-field v-model="lat" label="Latitude" outlined required />
+          <v-text>
+            <span>Lng: {{ longitude }}</span>
+            <span>Lat: {{ latitude }}</span>
+          </v-text>
         </v-form>
       </v-card-text>
     </v-card>
@@ -34,7 +35,7 @@ const props = defineProps<{
 }>();
 const emit = defineEmits(["close"]);
 
-const { lng, lat } = useMapCoord();
+const { longitude, latitude } = useMapCoord();
 
 function close() {
   emit("close");
