@@ -1,5 +1,11 @@
 <template>
-  <v-app-bar title="看路" color="primary" />
+  <v-app-bar title="看路">
+    <v-spacer />
+
+    <v-btn icon @click="toggleTheme">
+      <v-icon>mdi-theme-light-dark</v-icon>
+    </v-btn>
+  </v-app-bar>
 
   <v-main fill-height>
     <div ref="mapRef" class="w-full h-full" />
