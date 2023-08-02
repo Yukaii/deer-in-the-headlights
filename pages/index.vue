@@ -40,6 +40,7 @@ export default {
       const map = new Map({
         container: mapRef.value!,
         style: "https://basemaps.cartocdn.com/gl/positron-gl-style/style.json",
+        // 凱道
         center: [121.51545267311785, 25.039814170038984],
         zoom: 15,
       });
