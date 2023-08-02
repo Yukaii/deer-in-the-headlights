@@ -1,15 +1,13 @@
 <template>
-  <h1 class="text-3xl font-bold underline">Hello world!</h1>
+  <v-app-bar title="看路" color="primary" />
 
-  <v-btn @click="toggleTheme">Hello world!</v-btn>
-
-  <p>Mouse position: {{ x }}, {{ y }}</p>
-
-  <div ref="mapRef" style="height: 400px"></div>
+  <v-main fill-height>
+    <div ref="mapRef" class="w-full h-full" />
+  </v-main>
 </template>
 
 <script lang="ts">
-import 'maplibre-gl/dist/maplibre-gl.css';
+import "maplibre-gl/dist/maplibre-gl.css";
 
 import toggleTheme from "~/hooks/toggleTheme";
 import { useMouse } from "@vueuse/core";
