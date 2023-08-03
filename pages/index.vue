@@ -37,10 +37,10 @@
 import "maplibre-gl/dist/maplibre-gl.css";
 
 import toggleTheme from "~/hooks/toggleTheme";
-import useMapCoord from "~/hooks/useMapCoord";
+import useMapCoord from "../hooks/useMapCoord";
 import useSubmissionSteps from "../hooks/useSubmissionSteps";
 import { useMouse } from "@vueuse/core";
-import { Map } from "maplibre-gl";
+import { LngLatLike, Map } from "maplibre-gl";
 import { onMounted, ref, computed } from "vue";
 
 export default {
@@ -54,20 +54,23 @@ export default {
     const onClosed = () => {
       goBackTo("initial");
     };
+    
+    const defaultCoord: LngLatLike = [121.51545267311785, 25.039814170038984];
 
     onMounted(() => {
       const map = new Map({
         container: mapRef.value!,
         style: "https://basemaps.cartocdn.com/gl/positron-gl-style/style.json",
         // 凱道
-        center: [121.51545267311785, 25.039814170038984],
+        center: defaultCoord,
         zoom: 15,
       });
 
+      setCoord(defaultCoord[0], defaultCoord[1]);
+
       map.on("move", () => {
         const { lng, lat } = map.getCenter();
-        setCoord({ lng, lat });
-        console.log({ lng, lat });
+        setCoord(lng, lat);
       });
     });
 
